@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RouteX - Travel & Migration Agency</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0c4a2c;
+            --accent-color: #7ac142;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .text-accent {
+            color: var(--accent-color);
+        }
+
+        .bg-accent {
+            background-color: var(--accent-color);
+        }
+
+       /* Ensure consistent button styles */
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-accent:hover {
+            background-color: #689f35;
+            color: white;
+        }
+
+        /* Header Styles */
+        .navbar {
+            padding: 20px 0;
+            background-color: white;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            margin: 0 10px;
+        }
+
+        .contact-info {
+            color: var(--primary-color);
+        }
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(12, 74, 44, 0.8), rgba(12, 74, 44, 0.8)),
+                        url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh; /* Adjust as necessary */
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center content horizontally */
+            color: white;
+            text-align: center; /* Align text centrally */
+            position: relative;
+            overflow: hidden;
+            padding: 20px; /* Add some padding for responsiveness */
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px; /* Space between headings */
+        }
+
+        .hero-content h1.text-accent {
+            color: #0e7d19; /* Accent color for emphasis */
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .hero-content .btn {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+
+        .hero-content .btn:hover {
+            background-color: #0A3A23; /* Darker shade on hover */
+        }
+
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+        }
+
+        .experience-box {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-images img {
+            border-radius: 10px;
+            margin: 10px;
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-gallery img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 5px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        .logo-small {
+            width: 35px; /* Adjust width as needed */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 100%; /* Ensure it is responsive */
+        }
+        .green-arrow {
+            color: var(--accent-color);  /* This will apply the green color from your custom variable */
+            font-weight: bold;  /* Optional, to make it bold */
+            margin-right: 8px;  /* Space between the arrow and the text */
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo.jpg" alt="RouteX">
+                <span style="font-weight: bold; color: green;">RouteX</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">STORY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">VISA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">BLOG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PAGE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT</a>
+                    </li>
+                </ul>
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    (907) 485-3412
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Journey with Confidence</h1>
+                <h1><span class="text-accent">Migrate</span> with Us</h1>
+                <p class="mt-4">
+                    Discover a world of opportunities with RouteX. Whether you're planning to travel, migrate, or explore new horizons, we're here to make your journey smooth and memorable.</p>
+                </p>
+                <button class="btn btn-accent mt-4">Learn More →</button>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-images position-relative">
+                        <img src="working-new-project.jpg" 
+                             alt="Team member working" 
+                             class="img-fluid rounded mb-3">
+                        <img src="focused-smiling-businesswomen-looking-open-laptop-display.jpg" 
+                             alt="Team member smiling" 
+                             class="img-fluid rounded mb-3">
+                        <img src="cheerful-female-friends-watching-discussing-media-content.jpg" 
+                             alt="Team meeting" 
+                             class="img-fluid rounded mb-3">
+                        <div class="experience-box">
+                            <h2>10+</h2>
+                            <p class="mb-0">Years Of Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <span class="text-accent">ABOUT US</span>
+                    <h2 class="mt-3">Unknown Wanderlust<br>Your Journey into</h2>
+                    <p class="mt-4">We are dedicated to providing you with the best travel and migration services. Our experienced team ensures that you receive expert guidance for all your travel and visa needs. With over 10 years of experience, we have helped countless clients reach their dream destinations safely and efficiently.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h5><i class="fas fa-check-circle text-accent me-2"></i>Safety Guides</h5>
+                            <p>We prioritize your safety with essential travel tips and safety protocols. Our guides cover local customs, emergency procedures, and staying safe in unfamiliar environments, ensuring you travel with confidence.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5><i class="fas fa-check-circle text-accent me-2"></i>Passport Assistance</h5>
+                            <p>Obtaining or renewing a passport can be daunting, but we make it easy. Our expert team helps you gather documents, complete applications, and navigate the process, ensuring a quick and hassle-free experience..</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-accent mt-4">Read More →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <span class="text-accent">OUR SERVICES</span>
+            <h2 class="mt-3">Adventure Unleashed<br>Discover Your Next</h2>
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-utensils text-white fa-2x"></i>
+                        </div>
+                        <h4>Food and Wine Tours</h4>
+                        <p>Savor the finest culinary delights and indulge in exquisite wines as you journey through renowned food destinations and hidden gastronomic treasures</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-plane text-white fa-2x"></i>
+                        </div>
+                        <h4>Travel Opportunities</h4>
+                        <p>Explore a world of adventure! Discover unique destinations, cultural experiences, and thrilling activities tailored to make your journeys unforgettable</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-map text-white fa-2x"></i>
+                        </div>
+                        <h4>Solo Travel Planning</h4>
+                        <p>Embark on a personal adventure! Find the best tips, destinations, and resources to plan your solo trip with confidence and ease</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="logo.jpg" alt="RouteX">
+                        <span style="font-weight: bold; color: rgb(220, 228, 220); font-size: 1.3rem;">RouteX</span>
+                    </a>
+                    
+
+                    <p>Corporate business typically refers to large-scale enterprises or organizations engaged in various industries and sectors.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Service Menu</h5>
+                    <div class="footer-links mt-4">
+                        <a href="#"><i class="fas fa-check-circle text-accent me-2"></i>Mistakes To Avoid</a>
+                        <a href="#"><i class="fas fa-check-circle text-accent me-2"></i>Your Startup</a>
+                        <a href="#"><i class="fas fa-check-circle text-accent me-2"></i>Knew About Fonts</a>
+                        <a href="#"><i class="fas fa-check-circle text-accent me-2"></i>Know About Fonts</a>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-3">
+                    <h5>Useful Link</h5>
+                    <div class="footer-links mt-4">
+                        <a href="#"><span class="green-arrow">></span> Latest News</a>
+                        <a href="#"><span class="green-arrow">></span> Careers</a>
+                        <a href="#"><span class="green-arrow">></span> General Inquiries</a>
+                        <a href="#"><span class="green-arrow">></span> Case Studies</a>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-3">
+                    <h5>Gallery</h5>
+                    <div class="footer-gallery mt-4">
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <img src="gallery1.jpg" alt="Gallery image">
+                            </div>
+                            <div class="col-4">
+                                <img src="gallery2.jpg" alt="Gallery image">
+                            </div>
+                            <div class="col-4">
+                                <img src="gallery3.jpg" alt="Gallery image">
+                            </div>
+                            <div class="col-4">
+                                <img src="gallery4.jpg" alt="Gallery image">
+                            </div>
+                            <div class="col-4">
+                                <img src="gallery5.jpg" alt="Gallery image">
+                            </div>
+                            <div class="col-4">
+                                <img src="gallery6.jpg" alt="Gallery image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5">
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <p class="mb-0">© Alvin K Sabu 2024 | All Rights Reserved</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="text-white me-3" style="text-decoration: none;">Terms & Condition</a>
+                    <a href="#" class="text-white me-3" style="text-decoration: none;">Privacy Policy</a>
+                    <a href="#" class="text-white" style="text-decoration: none;">Contact Us</a>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                document.querySelector('.navbar').style.boxShadow = 'none';
+            }
+        });
+
+        // Service card hover effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
